@@ -16,8 +16,9 @@
 }
 .content{
 
-    background-image: url("newlol.png");
-    background-size: cover;
+    /* background-image: url("newlol.png");
+    background-size: cover; */
+    background-color: rgb(246, 245, 250);
     
 
 
