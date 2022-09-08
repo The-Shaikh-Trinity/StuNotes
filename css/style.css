@@ -3,7 +3,7 @@
 @tailwind utilities;
 .features{
 
-   background-image: url("newnote.png");
+   background-image: url("../images/note.png");
    background-size: contain;
 }
 #feature{
