@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 .features{
 
    background-image: url("newnote.png");
@@ -47,10 +50,20 @@
 
 }
 #f3{
-    background-color: aliceblue;
+    background-color: rgb(33, 111, 179);
     border-radius: 10px;
     /* margin: 10px;
     width: 23vw; */
 }
+#hh{
+    background: #f4f4f4;    border:rgb(0, 0, 0);
+}
+#hl{
+    background: aliceblue;    border:rgb(0, 0, 0);
+}
 
+.test
+{
 
+    border-radius: 10px;
+}
