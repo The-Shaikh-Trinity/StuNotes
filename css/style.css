@@ -1,69 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.features{
-
-   background-image: url("../images/note.png");
-   background-size: contain;
+.features {
+  background-image: url("../images/note.png");
+  background-size: contain;
 }
-#feature{
-    /* background-image: url("lol.jpg"); */
-    border-radius: 5px;
-    max-width: 80%;
-    margin: auto;
-
+#feature {
+  /* background-image: url("lol.jpg"); */
+  border-radius: 5px;
+  max-width: 80%;
+  margin: auto;
 }
 
-#tt{
-    background-color: #dcdcef;
-    /* background-image: url("kkk.png"); */
-
+#tt {
+  background-color: #dcdcef;
+  /* background-image: url("kkk.png"); */
 }
 
-.foor{
-    background-color: #eeeef8;
-    /* background-image: url("kkk.png"); */
-
+.foor {
+  background-color: #eeeef8;
+  /* background-image: url("kkk.png"); */
 }
 
-#head{
-
-    background-color: rgb(225, 227, 234);
-    border-radius: 10px;
-    background-color: aliceblue;
-
+#head {
+  background-color: rgb(225, 227, 234);
+  border-radius: 10px;
+  background-color: aliceblue;
 }
-#f2{
-    background-color: rgb(225, 227, 234);
-    border-radius: 10px;
-    /* margin: 10px;
-    width: 23vw; */
-
-
-    
-}
-#f1{
-    background-color: aliceblue;
-    border-radius: 10px;
-    /* margin: 10px;
-    width: 23vw; */
-
-}
-#f3{
-    background-color: rgb(33, 111, 179);
-    border-radius: 10px;
-    /* margin: 10px;
+#f2 {
+  background-color: rgb(225, 227, 234);
+  border-radius: 10px;
+  /* margin: 10px;
     width: 23vw; */
 }
-#hh{
-    background: #f4f4f4;    border:rgb(0, 0, 0);
+#f1 {
+  background-color: aliceblue;
+  border-radius: 10px;
+  /* margin: 10px;
+    width: 23vw; */
 }
-#hl{
-    background: aliceblue;    border:rgb(0, 0, 0);
+#f3 {
+  background-color: rgb(33, 111, 179);
+  border-radius: 10px;
+  /* margin: 10px;
+    width: 23vw; */
+}
+#hh {
+  background: #f4f4f4;
+  border: rgb(0, 0, 0);
+}
+#hl {
+  background: aliceblue;
+  border: rgb(0, 0, 0);
 }
 
-.test
-{
-
-    border-radius: 10px;
+.test {
+  border-radius: 10px;
+}
+#head {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(225, 227, 234);
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+.foor {
+  border-radius: 10px;
+  background-color: aliceblue;
+}
+.content {
+  /* background-image: url("newlol.png");
+    background-size: cover; */
+  background-color: rgb(246, 245, 250);
 }
