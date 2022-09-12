@@ -172,7 +172,7 @@ include "includes/head.php"
                     <span class="text-gray-500 text-sm">Engineering, Biochemical</span>
                   </span>
                 </a>
-              </div>
+              </div> 
             </div>
             <div class="p-4 md:w-1/2 w-full">
               <div class="h-full bg-gray-100 p-8 rounded">
