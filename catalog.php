@@ -23,7 +23,7 @@ include "includes/head.php"
         for ($i = 0; $i < 9; $i++) {
 
         ?>
-         <img src="images/<?php echo "note.png" ?>" alt="">
+
           <!-- card 1 -->
           <div class="p-4 md:w-1/3">
             <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col cursor-pointer hover:font-bold " id="hh">
@@ -34,7 +34,7 @@ include "includes/head.php"
                 </div>
 
                 <a href="cat.php?cat_id=<?php echo $i ?>">
-               
+
                   <!-- <i class="fa-thin fa-desktop"></i> -->
                   <h1 class="text-gray-900 text-lg font-bold title-font  ">CS/IT</h1>
                 </a>
