@@ -29,7 +29,7 @@ include "includes/head.php"
             <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col cursor-pointer hover:font-bold " id="hh">
               <div class="flex items-center mb-3">
                 <div style="max-width: 18rem;" class="w-8 border-primary h-8 mr-3 inline-flex items-center justify-center rounded-full text-blue-700 flex-shrink-0">
-                  <i class="fa fa-desktop fa-2x"></i>
+                  <i class="fa fa-desktop  fa-2x"></i>
                   </svg>
                 </div>
 
