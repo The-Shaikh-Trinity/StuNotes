@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Sep 12, 2022 at 03:42 PM
+-- Host: 127.0.0.1
+-- Generation Time: Sep 17, 2022 at 03:53 PM
 -- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,9 +30,16 @@ SET time_zone = "+00:00";
 CREATE TABLE `cat` (
   `id` int(4) NOT NULL,
   `cat_name` varchar(30) NOT NULL,
-  `cat_logo` varchar(50) NOT NULL,
   `cat_desc` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cat`
+--
+
+INSERT INTO `cat` (`id`, `cat_name`, `cat_desc`) VALUES
+(1, 'Computer Science/IT', 'Various resources related to Computer Science and Information technology field.'),
+(2, 'Mechanical Engineering', 'Various resources related to Mechanical Engineering field, organized and well maintained.');
 
 -- --------------------------------------------------------
 
@@ -111,7 +118,7 @@ ALTER TABLE `sub`
 -- AUTO_INCREMENT for table `cat`
 --
 ALTER TABLE `cat`
-  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `doc`
