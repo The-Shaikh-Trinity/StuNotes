@@ -3,11 +3,20 @@
 <?php
 include "includes/head.php"
 ?>
+<?php
+include "includes/function.php"
+?>
 
 <body>
 
   <?php
   include "includes/navbar.php"
+
+
+  ?>
+  <?php
+ $data =  get_cat();
+//  echo '<pre>'; print_r($data); echo '</pre>';
   ?>
   <!--this section is for catalog-->
 
@@ -19,8 +28,10 @@ include "includes/head.php"
         <h1 class="sm-text-3xl text-5xl font-medium title-font text-gray-900 ">Catalog</h1>
       </div>
       <div class="flex flex-wrap m-4">
+        
         <?php
-        for ($i = 0; $i < 9; $i++) {
+        $num = sizeof($data);
+        for ($i = 0; $i < $num; $i++) {
 
         ?>
 
@@ -29,19 +40,24 @@ include "includes/head.php"
             <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col cursor-pointer hover:font-bold " id="hh">
               <div class="flex items-center mb-3">
                 <div style="max-width: 18rem;" class="w-8 border-primary h-8 mr-3 inline-flex items-center justify-center rounded-full text-blue-700 flex-shrink-0">
-                  <i class="fa fa-desktop fa-2x"></i>
+                  <!-- <i class="fa fa-desktop  fa-2x"></i> -->
+
+                  <!-- <i class=" fa-solid fa-notes"></i>
+                 -->
+                  <i class="fa fa-circle-thin fa-2x" aria-hidden="true"></i>
+
+                  <i class="fa-solid fa-notes"></i>
                   </svg>
                 </div>
 
-                <a href="cat.php?cat_id=<?php echo $i ?>">
+                <a href="cat.php?cat_id=<?php echo $data[$i]['id'] ?>">
 
                   <!-- <i class="fa-thin fa-desktop"></i> -->
-                  <h1 class="text-gray-900 text-lg font-bold title-font  ">CS/IT</h1>
+                  <h1 class="text-gray-900 text-lg font-bold title-font  "><?php echo $data[$i]['cat_name'] ?></h1>
                 </a>
               </div>
               <div class="flex-grow">
-                <p class="leading-relaxed text-base">Platform to find, share and price the soft copies of notes of
-                  various variety.</p>
+                <p class="leading-relaxed text-base"><?php echo $data[$i]['cat_desc'] ?></p>
                 <a class="mt-3 text-indigo-500 inline-flex items-center" href="cat.php">Learn More
                   <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
                     <path d="M5 12h14M12 5l7 7-7 7"></path>
