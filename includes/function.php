@@ -37,4 +37,10 @@ function get_cat(){
     $data=query($query);
     return $data;
 }
+function get_sem(){
+    $id = $_GET['cat_id'];
+    $query = "SELECT * FROM sem WHERE cat_id = $id ";
+    $data=query($query);
+    return $data;
+}
 ?>
