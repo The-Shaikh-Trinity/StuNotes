@@ -1,9 +1,3 @@
-<?php
-session_start();
-include "includes/functions.php";
-login();
-?>
-
 <head>
     <title>
         PharmEasy
@@ -25,9 +19,7 @@ login();
             <div style="padding-top:30px" class="panel-body">
 
                 <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
-                <?php
-                message();
-                ?>
+
                 <form id="loginform" class="form-horizontal" role="form" method="post" action="login.php">
 
                     <div style="margin-bottom: 25px" class="input-group">
