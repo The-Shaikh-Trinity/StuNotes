@@ -185,7 +185,6 @@ include "includes/head.php";
                         </td>
                     </tr>
 
-                    ?>
                 </tbody>
             </table>
         </div>
