@@ -43,4 +43,5 @@ function get_sem(){
     $data=query($query);
     return $data;
 }
+
 ?>

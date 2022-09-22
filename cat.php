@@ -47,7 +47,11 @@ include "includes/head.php"
     </div>
   </div>
 
-  <div class="content">
+  <div class="semester">
+
+  
+
+  <div class="content" id="hahah">
 
 
     <section class="text-gray-600 body-font">
@@ -59,13 +63,6 @@ include "includes/head.php"
 
         </div>
 
-        <?php
-
-
-for($i = 0; $i<3; $i++){
-
-
-        ?>
         <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 mx-5 -my-5">
           <div class="p-2 sm:w-1/2 w-full">
             <div class="bg-sky-100 rounded flex p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer">
@@ -86,11 +83,8 @@ for($i = 0; $i<3; $i++){
             </div>
           </div>
 
-          <?php
-}
 
-          ?>
-          <!-- <div class="p-2 sm:w-1/2 w-full">
+          <div class="p-2 sm:w-1/2 w-full">
             <div class="bg-sky-100 rounded flex p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer">
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -126,12 +120,13 @@ for($i = 0; $i<3; $i++){
               <span class="title-font font-medium bg-sky-100">Subject 6</span>
             </div>
           </div>
-        </div> -->
-          <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
         </div>
+        <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+      </div>
     </section>
   </div>
-
+  </div> 
+  <!-- semester end -->
   <!-- footer -->
   <?php
   include "includes/footer.php"
