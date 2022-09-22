@@ -73,7 +73,7 @@ include "includes/function.php"
 
       <div class="content" id="hahah">
 
-        <section class="text-gray-600 body-font">
+        <section class="text-gray-600 body-font lolol">
           <div class="container px-5 py-24 mx-auto">
             <div class="text-center mb-20">
               <h1 class="sm:text-3xl text-2xl font-bold text-center title-font text-gray-900 mb-4">Semester <?php
@@ -90,7 +90,9 @@ include "includes/function.php"
 
                   $sub = get_sub($data[$i]['id']);
                   if ($sub) {
-                    $nu = sizeof($sub);
+                    $nu = sizeof($sub); //nu is the size of subjects array
+                  } else {
+                    continue;
                   }
 
 
@@ -98,11 +100,11 @@ include "includes/function.php"
                   // $nu = sizeof($sub);
                   for ($k = 0; $k < $nu; $k++) {
                   ?>
-                    <button class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer" id="buttonsub"><?php if (isset($sub[$k]['sub-name'])) {
-                                                                                                                                                                                                                      echo $sub[$k]['sub-name'];
-                                                                                                                                                                                                                    } else {
-                                                                                                                                                                                                                      echo 'Will be Uploaded sooon';
-                                                                                                                                                                                                                    }  ?></button>
+                    <button class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub"><?php if (isset($sub[$k]['sub-name'])) {
+                                                                                                                                                                                                                                        echo $sub[$k]['sub-name'];
+                                                                                                                                                                                                                                      } else {
+                                                                                                                                                                                                                                        echo 'Will be Uploaded sooon';
+                                                                                                                                                                                                                                      }  ?></button>
 
                   <?php
                   }
