@@ -3,6 +3,9 @@
 <?php
 include "includes/head.php"
 ?>
+<?php
+include "includes/function.php"
+?>
 
 <body>
   <?php
@@ -47,95 +50,81 @@ include "includes/head.php"
     </div>
   </div>
 
-  <div class="content">
+  <div class="semester">
+
+    <?php
+    $data =  get_sem();
+    // echo '<pre>';
+    // print_r($data);
+    // echo '</pre>';
 
 
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="text-center mb-20">
-          <h1 class="sm:text-3xl text-2xl font-bold text-center title-font text-gray-900 mb-4">Semester Number</h1>
-          <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Details about semester</p>
+
+    $num = sizeof($data);
+    // echo $num;
+    // $i = 0;
 
 
-        </div>
-
-        <?php
-
-
-for($i = 0; $i<3; $i++){
+    for ($i = 0; $i < $num; $i++) {
+    ?>
 
 
-        ?>
-        <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 mx-5 -my-5">
-          <div class="p-2 sm:w-1/2 w-full">
-            <div class="bg-sky-100 rounded flex p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4 hover:text-indigo-100" viewBox="0 0 24 24">
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                <path d="M22 4L12 14.01l-3-3"></path>
-              </svg>
-              <span class="title-font font-medium ">Subject 1</span>
+
+
+      <div class="content" id="hahah">
+
+        <section class="text-gray-600 body-font">
+          <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-20">
+              <h1 class="sm:text-3xl text-2xl font-bold text-center title-font text-gray-900 mb-4">Semester <?php
+                                                                                                            echo $data[$i]['sem-num'];
+                                                                                                            ?></h1>
+              <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Details about semester</p>
+
+              <div class="sem">
+                <div class="flex-container">
+
+
+
+                  <?php
+
+                  $sub = get_sub($data[$i]['id']);
+                  if ($sub) {
+                    $nu = sizeof($sub);
+                  }
+
+
+
+                  // $nu = sizeof($sub);
+                  for ($k = 0; $k < $nu; $k++) {
+                  ?>
+                    <button class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer" id="buttonsub"><?php if (isset($sub[$k]['sub-name'])) {
+                                                                                                                                                                                                                      echo $sub[$k]['sub-name'];
+                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                      echo 'Will be Uploaded sooon';
+                                                                                                                                                                                                                    }  ?></button>
+
+                  <?php
+                  }
+
+
+                  ?>
+                </div>
+
+              </div>
             </div>
           </div>
-          <div class="p-2 sm:w-1/2 w-full">
-            <div class="bg-sky-100 rounded flex p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                <path d="M22 4L12 14.01l-3-3"></path>
-              </svg>
-              <span class="title-font font-medium">Subject 2</span>
-            </div>
-          </div>
-
-          <?php
-}
-
-          ?>
-          <!-- <div class="p-2 sm:w-1/2 w-full">
-            <div class="bg-sky-100 rounded flex p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                <path d="M22 4L12 14.01l-3-3"></path>
-              </svg>
-              <span class="title-font font-medium">Subject 3</span>
-            </div>
-          </div>
-          <div class="p-2 sm:w-1/2 w-full">
-            <div class="bg-sky-100 rounded flex p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                <path d="M22 4L12 14.01l-3-3"></path>
-              </svg>
-              <span class="title-font font-medium">Subject 4</span>
-            </div>
-          </div>
-          <div class="p-2 sm:w-1/2 w-full">
-            <div class="bg-sky-100 rounded flex p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                <path d="M22 4L12 14.01l-3-3"></path>
-              </svg>
-              <span class="title-font font-medium">Subject 5</span>
-            </div>
-          </div>
-          <div class="p-2 sm:w-1/2 w-full">
-            <div class="bg-sky-100 rounded flex p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer">
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
-                <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
-                <path d="M22 4L12 14.01l-3-3"></path>
-              </svg>
-              <span class="title-font font-medium bg-sky-100">Subject 6</span>
-            </div>
-          </div>
-        </div> -->
-          <button class="flex mx-auto mt-16 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
-        </div>
-    </section>
+        </section>
+      </div>
   </div>
-
+  <!-- semester end -->
   <!-- footer -->
-  <?php
-  include "includes/footer.php"
-  ?>
+<?php
+    }
+?>
+<?php
+include "includes/footer.php"
+?>
 </body>
 
 </html>

@@ -130,3 +130,18 @@
     background-size: cover; */
   background-color: rgb(246, 245, 250);
 }
+#hahah{
+  width: 80%;
+  margin: auto;
+  align-items: center;
+}
+#buttonsub{
+  width: 25vw;
+
+  
+
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}

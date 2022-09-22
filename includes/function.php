@@ -15,8 +15,8 @@ function query($query)
 
     $server = "localhost";
 
-$usn = "root";
-$password = "";
+    $usn = "root";
+    $password = "";
     $con = mysqli_connect($server, $usn, $password, "published");
     $run = mysqli_query($con, $query);
     if ($run) {
@@ -32,15 +32,24 @@ $password = "";
         return 0;
     }
 }
-function get_cat(){
+function get_cat()
+{
     $query = "SELECT * FROM cat";
-    $data=query($query);
+    $data = query($query);
     return $data;
 }
-function get_sem(){
+function get_sem()
+{
     $id = $_GET['cat_id'];
     $query = "SELECT * FROM sem WHERE cat_id = $id ";
-    $data=query($query);
+    $data = query($query);
     return $data;
 }
-?>
+function get_sub($id)
+{
+
+    $query = "SELECT * FROM sub WHERE sem_id = $id";
+    $res = query($query);
+
+    return $res;
+}
