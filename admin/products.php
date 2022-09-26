@@ -4,7 +4,8 @@ include "includes/head.php";
 
 <body>
     <?php
-    include "includes/header.php"
+    include "includes/header.php";
+    include "includes/functions.php";
     ?>
 
 
@@ -20,142 +21,92 @@ include "includes/head.php";
                     <h2>Products details</h2>
                     <br>
                 </div>
+
                 <div class="col">
                 </div>
                 <div class="col">
                     <br>
                     <form class="d-flex" method="GET" action="products.php">
-                        <input class="form-control me-2 col" type="search" name="search_item_name" placeholder="Search for product" aria-label="Search">
-                        <button class="btn btn-outline-secondary" type="submit" name="search_item" value="search">Search</button>
+                        <input class="form-control me-2 col" type="search" name="search" placeholder="Search for product" aria-label="Search">
+                        <button class="btn btn-outline-secondary" type="submit" name="searching" value="search">Search</button>
                     </form>
                     <br>
                 </div>
             </div>
         </div>
-
         <br>
-        <h2>Edit Product Details</h2>
-        <form action="products.php" method="POST">
-            <div class=" form-group mb-3">
-                <label>Product name</label>
-                <input pattern="[A-Za-z0-9_]{1,25}" id="exampleInputText1" type="text" class="form-control" placeholder="item_title" name="name">
-                <div class="form-text">please enter the product name in range(1-25) character/s , special character not allowed !</div>
-            </div>
-            <div class="form-group">
-                <label>Brand name</label>
-                <input pattern="[A-Za-z0-9_]{1,25}" id="validationTooltip01" type="text" class="form-control" placeholder="item_brand" name="brand">
-                <div class="form-text">please enter the brand name in range(1-25) character/s , special character not allowed !</div>
-            </div>
-            <div class="input-group mb-3 form-group">
-                <label class="input-group-text" for="inputGroupSelect01">category</label>
-                <select name="cat" class="form-select" id="inputGroupSelect01">
-                    <option selected>Choose...</option>
-                    <option value="medicine">medicine</option>
-                    <option value="self-care">self-care</option>
-                    <option value="machine">machine</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Product tags</label>
-                <input pattern="^[#.0-9a-zA-Z\s,-]+$" id="validationTooltip01" type="text" class="form-control" placeholder="item_tags" name="tags">
-                <div class="form-text">please enter tags for the product in range(1-250) character/s , special character not allowed !</div>
-            </div>
-            <div class="form-group">
-                <label>Product image</label>
-                <input type="file" accept="image/*" class="form-control" placeholder="item_image" name="image">
-                <div class="form-text">please enter image for the product .</div>
-            </div>
-            <div class="form-group">
-                <label>Product quantity</label>
-                <input type="number" class="form-control" placeholder="item_quantity" name="quantity" min="1" max="999">
-                <div class="form-text">please enter the quantity of the product in range(1-999) .</div>
-            </div>
-            <div class="input-group mb-3 form-group">
-                <span class="input-group-text">₹</span>
-                <input pattern="[0-9]+" id="validationTooltip01" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" placeholder="item_price">
-                <span class="input-group-text">.00</span>
-            </div>
-            <div class="form-text">please enter the price of the product .</div>
-            <div class="form-group">
-                <label for="inputAddress2">Product details</label>
-                <input type="text" class="form-control" placeholder="item_details" name="details">
-            </div>
-            <div class="form-text">please enter the product details .</div>
+        <!-- this section is for the adding the details -->
+        <?php
+        
+        if (isset($_GET['edit'])) {
+        ?>
+            <h2>Edit Product Details</h2>
+            <form action="products.php" method="POST">
+                <div class=" form-group mb-3">
+                    <label>category name</label>
+                    <input id="exampleInputText1" type="text" class="form-control" placeholder="product name" name="name">
+                    <div class="form-text">please enter the product name in range(1-25) character/s , special character not allowed !</div>
+                </div>
+                <div class="form-group">
+                    <label>cateory description</label>
+                    <input id="validationTooltip01" type="" class="form-control" placeholder="product brand" name="brand">
+                    <div class="form-text">please enter the brand name in range(1-25) character/s , special character not allowed !</div>
+                </div>
+                <button type="submit" class="btn btn-outline-primary" value="update" name="add_item">Submit</button>
+                <button type=" submit" class="btn btn-outline-danger" value="cancel" name="cancel">Cancel</button>
+                <br> <br>
+            </form>
             <br>
-            <button type="submit" class="btn btn-outline-primary" value="update" name="update">Submit</button>
-            <button type=" submit" class="btn btn-outline-danger" value="cancel" name="cancel">Cancel</button>
-            <br> <br>
-        </form>
+        <?php
+        }
+        ?>
+
+        <!-- this section is for the adding the details -->
+
+        <?php
+        add();
+        // if (isset($_GET['add'])) {
+
+ 
+        ?>
+           
+
+            <h2>Add Product</h2>
+            <form action="products.php" method="POST">
+                <div class=" form-group mb-3">
+                    <label>category name</label>
+                    <input id="exampleInputText1" type="text" class="form-control" placeholder="product name" name="cat_name">
+                    <div class="form-text">please enter the product name in range(1-25) character/s , special character not allowed !</div>
+                </div>
+                <div class="form-group">
+                    <label>cateory description</label>
+                    <input id="validationTooltip01" type="" class="form-control" placeholder="product brand" name="cat_desc">
+                    <div class="form-text">please enter the brand name in range(1-25) character/s , special character not allowed !</div>
+                </div>
+                <button type="submit" class="btn btn-outline-primary" value="update" name="add_item">Submit</button>
+                <button type=" submit" class="btn btn-outline-danger" value="cancel" name="cancel">Cancel</button>
+                <br> <br>
+            </form>
+            
 
 
-        <br>
-        <h2>Add Product</h2>
-        <form action="products.php" method="POST">
-            <div class=" form-group mb-3">
-                <label>Product name</label>
-                <input id="exampleInputText1" type="text" class="form-control" placeholder="product name" name="name">
-                <div class="form-text">please enter the product name in range(1-25) character/s , special character not allowed !</div>
-            </div>
-            <div class="form-group">
-                <label>Brand name</label>
-                <input id="validationTooltip01" type="text" class="form-control" placeholder="product brand" name="brand">
-                <div class="form-text">please enter the brand name in range(1-25) character/s , special character not allowed !</div>
-            </div>
-            <div class="input-group mb-3 form-group">
-                <label class="input-group-text" for="inputGroupSelect01">category</label>
-                <select name="cat" class="form-select" id="inputGroupSelect01">
-                    <option value="" selected>Choose...</option>
-                    <option value="medicine">medicine</option>
-                    <option value="self-care">self-care</option>
-                    <option value="machine">machine</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Product tags</label>
-                <input id="validationTooltip01" type="text" class="form-control" placeholder="product tags" name="tags">
-                <div class="form-text">please enter tags for the product in range(1-250) character/s , special character not allowed !</div>
-            </div>
-            <div class="form-group">
-                <label>Product image</label>
-                <input type="file" accept="image/*" class="form-control" placeholder="image" name="image">
-                <div class="form-text">please enter image for the product .</div>
-            </div>
-            <div class="form-group">
-                <label>Product quantity</label>
-                <input type="number" class="form-control" placeholder="product quantity" name="quantity" min="1" max="999">
-                <div class="form-text">please enter the quantity of the product in range(1-999) .</div>
-            </div>
-            <div class="input-group mb-3 form-group">
-                <span class="input-group-text">₹</span>
-                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" placeholder="product price">
-                <span class="input-group-text">.00</span>
-            </div>
-            <div class="form-text">please enter the price of the product .</div>
-            <div class="form-group">
-                <label for="inputAddress2">Product details</label>
-                <input type="text" class="form-control" placeholder="product details" name="details">
-            </div>
-            <div class="form-text">please enter the product details .</div>
-            <br>
-            <button type="submit" class="btn btn-outline-primary" value="update" name="add_item">Submit</button>
-            <button type=" submit" class="btn btn-outline-danger" value="cancel" name="cancel">Cancel</button>
-            <br> <br>
-        </form>
+        <?php
+        // }
+        ?>
+
+
+
 
         <div class="table-responsive">
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">ID</th>
+                        <th scope="col">sno</th>
+
+                        <th scope="col">Id</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Brand</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Tags</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">quantity</th>
-                        <th scope="col">price</th>
-                        <th scope="col">details</th>
+                        <th scope="col">Desc</th>
+
                         <th>
                         <th>
                             <button type="button" class="btn btn-outline-primary"><a style="text-decoration: none; color:black;" href="products.php?add=1"> &nbsp;&nbsp;Add&nbsp;&nbsp;</a></button>
@@ -164,29 +115,43 @@ include "includes/head.php";
 
                 </thead>
 
+
                 <tbody>
-
-                    <tr>
-                        <td>1 </td>
-                        <td>item_id</td>
-                        <td>item_title</td>
-                        <td>item_brand</td>
-                        <td>item_cat</td>
-                        <td>item_tags</td>
-                        <td>item_image</td>
-                        <td>item_quantity</td>
-                        <td>item_price</td>
-                        <td>item_details</td>
-                        <td>
-                            <button type="button" class="btn pull-left btn-outline-warning"><a style="text-decoration: none; color:black;" href="products.php?edit=item_id">Edit</a></button>
-                        </td>
-                        <td>
-                            <button type="button" class="btn pull-left btn-outline-danger"><a style="text-decoration: none; color:black;" href="products.php?delete=item_id">Delete</a></button>
-                        </td>
-                    </tr>
-
+                    <?php
+                    $data = display();
+                    if (isset($_GET['search'])) {
+                        $search = search();
+                        if (empty($search)) {
+                            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>
+                            <strong>Result not found</strong> 
+                            
+                          </div>";
+                        } else {
+                            $data = $search;
+                        }
+                    }
+                    $num = sizeof($data);
+                    for ($i = 0; $i < $num; $i++) {
+                    ?>
+                        <tr>
+                            <td><?php echo $i + 1 ?></td>
+                            <td><?php echo $data[$i]['id'] ?> </td>
+                            <td><?php echo $data[$i]['cat_name'] ?></td>
+                            <td><?php echo $data[$i]['cat_desc'] ?> </td>
+                            <td>
+                                <button type="button" class="btn pull-left btn-outline-warning"><a style="text-decoration: none; color:black;" href="products.php?edit=item_id">Edit</a></button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn pull-left btn-outline-danger"><a style="text-decoration: none; color:black;" href="products.php?delete=item_id">Delete</a></button>
+                            </td>
+                        </tr>
+                    <?php
+                    }
+                    ?>
                 </tbody>
+
             </table>
+
         </div>
     </main>
     </div>
@@ -194,4 +159,5 @@ include "includes/head.php";
     <?php
     include "includes/footer.php"
     ?>
+
 </body>
