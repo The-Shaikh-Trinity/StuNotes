@@ -1,23 +1,10 @@
 <?php
-
-
-
-
-
-// if(!$con){
-//     die("Connection to this database failed due to" . mysqli_connect_error());
-// }
-
-
-
+$con = mysqli_connect("localhost", "root", "", "published");
 function query($query)
 {
 
-    $server = "localhost";
 
-    $usn = "root";
-    $password = "";
-    $con = mysqli_connect($server, $usn, $password, "published");
+    global $con;
     $run = mysqli_query($con, $query);
     if ($run) {
         while ($row = $run->fetch_assoc()) {
@@ -47,9 +34,7 @@ function get_sem()
 }
 function get_sub($id)
 {
-
     $query = "SELECT * FROM sub WHERE sem_id = $id";
     $res = query($query);
-
     return $res;
 }

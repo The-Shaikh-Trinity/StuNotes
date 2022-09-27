@@ -11,16 +11,12 @@ include "includes/function.php"
 
   <?php
   include "includes/navbar.php"
-
-
   ?>
   <?php
- $data =  get_cat();
-//  echo '<pre>'; print_r($data); echo '</pre>';
+  $data =  get_cat();
+  //  echo '<pre>'; print_r($data); echo '</pre>';
   ?>
   <!--this section is for catalog-->
-
-
   <section class="text-gray-600 body-font">
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-col text-center w-full mb-20">
@@ -28,13 +24,11 @@ include "includes/function.php"
         <h1 class="sm-text-3xl text-5xl font-medium title-font text-gray-900 ">Catalog</h1>
       </div>
       <div class="flex flex-wrap m-4">
-        
+
         <?php
         $num = sizeof($data);
         for ($i = 0; $i < $num; $i++) {
-
         ?>
-
           <!-- card 1 -->
           <div class="p-4 md:w-1/3">
             <div class="flex rounded-lg h-full bg-gray-100 p-8 flex-col cursor-pointer hover:font-bold " id="hh">
@@ -71,16 +65,12 @@ include "includes/function.php"
         <?php
         }
         ?>
-
       </div>
     </div>
   </section>
-
   <?php
   include "includes/footer.php"
   ?>
-
-
 </body>
 
 </html>
