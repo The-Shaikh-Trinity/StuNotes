@@ -18,13 +18,13 @@ include "includes/head.php";
       <br>
       <div class="row">
         <div class="card" style="width: 25rem;margin-bottom: 20px ;margin-right: 200px ;">
-          <a href="orders.php">
+          <a href="semester.php">
             <img class="card-img-top" src="images/shopping-cart.svg" alt="Card image cap" style="width: 5rem;margin-top: 20px ;">
           </a>
           <div class="card-body">
             <h5 class="card-title">Orders</h5>
             <p class="card-text">Display and modify the orders details.</p>
-            <a href="orders.php" class="btn btn-primary">Go to orders page</a>
+            <a href="semester.php" class="btn btn-primary">Go to orders page</a>
           </div>
         </div>
         <div class="card" style="width: 25rem;margin-bottom: 20px ;">
@@ -40,13 +40,13 @@ include "includes/head.php";
       </div>
       <div class="row">
         <div class="card" style="width: 25rem;margin-top: 20px ;margin-right: 200px ;">
-          <a href="customers.php">
+          <a href=" doc.php">
             <img class="card-img-top" src="images/users.svg" alt="Card image cap" style="width: 5rem;margin-top: 20px ;">
           </a>
           <div class="card-body">
             <h5 class="card-title">Customers</h5>
             <p class="card-text">Display and modify the customers details.</p>
-            <a href="customers.php" class="btn btn-primary">Go to customers page</a>
+            <a href=" doc.php" class="btn btn-primary">Go to customers page</a>
           </div>
         </div>
         <div class="card" style="width: 25rem;margin-top: 20px ;">
