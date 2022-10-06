@@ -8,22 +8,20 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="orders.php">
+                <a class="nav-link" href="semester.php">
                     <span data-feather="shopping-cart"></span>
-                    Orders
-                </a>
+                    Semester Details </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="products.php">
                     <span data-feather="package"></span>
-                    Products
+                    Category Details
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="customers.php">
+                <a class="nav-link" href="doc.php">
                     <span data-feather="users"></span>
-                    Customers
-                </a>
+                    Document Details </a>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="admin.php">
