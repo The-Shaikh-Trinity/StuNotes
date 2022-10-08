@@ -23,6 +23,11 @@
                     <span data-feather="users"></span>
                     Document Details </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="sub.php">
+                    <span data-feather="users"></span>
+                    Subject Details </a>
+            </li>
             <li class="nav-item ">
                 <a class="nav-link" href="admin.php">
                     <span data-feather="user"></span>

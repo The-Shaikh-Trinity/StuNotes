@@ -35,7 +35,7 @@ include "includes/head.php";
                 <div class="col">
                     <br>
                     <form class="d-flex" method="GET" action="products.php">
-                        <input class="form-control me-2 col" type="search" name="search" placeholder="Search for product" aria-label="Search">
+                        <input class="form-control me-2 col" type="search" name="search" placeholder="Search subject name" aria-label="Search">
                         <button class="btn btn-outline-secondary" type="submit" name="searching" value="search">Search</button>
                     </form>
                     <br>

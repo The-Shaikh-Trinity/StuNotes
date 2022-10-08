@@ -204,7 +204,7 @@ function sem_display()
 function sem_edit($id)
 {
     if (isset($_POST['edit'])) {
-        $sem_nuum = $_POST["sem_num"];
+        $sem_nuum = $_POST["doc_ds"];
         $cat_id = $_POST["cat_id"];
         $sql = "UPDATE `sem` SET `id` = '85', `sem-num` = '$sem_nuum', `cat_id` = '$cat_id' WHERE `sem`.`id` = $id";
         echo $sql;
@@ -223,8 +223,6 @@ function sem_edit($id)
 
 function cat_name_id()
 {
-
-
     $sql = "SELECT id,cat_name from cat   ";
     // echo $sql;
 
@@ -239,6 +237,13 @@ function sem_get_by_id($id)
     return $data;
 }
 
+//new
+
+function get_cat_by_id($id){
+    $sql="select  cat_name from cat  where id='$id'";
+    $data = query($sql);
+    return $data;
+}
 
 
 function delete_sem()
@@ -352,25 +357,153 @@ function delete_doc()
 
 
 //this is for the editing  section for the doc.php
-
 function doc_edit($id)
 {
     if (isset($_POST['edit'])) {
-        $sem_nuum = $_POST["sem_num"];
-        $cat_id = $_POST["cat_id"];
-        $sql = "UPDATE `sem` SET `id` = '85', `sem-num` = '$sem_nuum', `cat_id` = '$cat_id' WHERE `sem`.`id` = $id";
-        echo $sql;
-        $result = connection($sql);
-        if ($result) {
-            "success";
+
+        $doc_desc = $_POST['doc_desc'];
+        $sub_id = $_POST['sub_id'];
+        if (isset($_FILES['pdf_file']['name'])) {
+            $file_name = $_FILES['pdf_file']['name'];
+            $file_tmp = $_FILES['pdf_file']['tmp_name'];
+            print_r($file_name);
+            move_uploaded_file($file_tmp, "./pdf/" . $file_name);
+
+            $sql = "UPDATE `doc` SET `sub-id` = '$sub_id', `doc-name` = '$file_name', `doc-desc` = '$doc_desc WHERE `doc`.`id` = $id";
+            echo $sql;
+            $iquery = connection($sql);
         } else {
-            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
-                <strong>Successfully Edites the data</strong> 
-              </div>";
+?>
+            <div class="alert alert-danger alert-dismissible
+        fade show text-center">
+                <a class="close" data-dismiss="alert" aria-label="close">×</a>
+                <strong>Failed!</strong>
+                File must be uploaded in PDF format!
+            </div>
+<?php
+        }
+    }
+}
+function doc_get_by_id($id)
+{
+    $query = "SELECT * FROM doc where id='$id'";
+    $data = query($query);
+    return $data;
+}
+// function doc_edit($id)
+// {
+//     if (isset($_POST['edit'])) {
+//         $sem_nuum = $_POST["sem_num"];
+//         $cat_id = $_POST["cat_id"];
+//         $sql = "UPDATE `sem` SET `id` = '85', `sem-num` = '$sem_nuum', `cat_id` = '$cat_id' WHERE `sem`.`id` = $id";
+//         echo $sql;
+//         $result = connection($sql);
+//         if ($result) {
+//             "success";
+//         } else {
+//             echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+//                 <strong>Successfully Edites the data</strong> 
+//               </div>";
+//         }
+//     }
+// }
+
+
+
+
+
+//this  section for the subject 
+// 1 show or display the data
+function sub_display()
+{
+    $query = "SELECT * FROM `sub`";
+    $data = query($query);
+    return $data;
+}
+
+//selecting sem-id and sem number from the semester tabale
+
+function sem_name_id()
+{
+
+    $sql = "SELECT `id`,`sem-num`,`cat_id` from sem";
+    // echo $sql;
+    $docdata = query($sql);
+    return $docdata;
+}
+//adding the subject details into the table
+
+function sub_add()
+{
+    if (isset($_POST['add_sub'])) {
+
+        $sem_id = $_POST['sem-id'];
+         $sub_name = $_POST['sub-name'];
+        $sub_code = $_POST['sub-code'];
+        $sql = "INSERT INTO `sub` (`sem-id`, `sub-name`, `sub-code`) VALUES ('$sem_id', '$sub_name', '$sub_code')";
+        echo $sql;
+        $add = connection($sql);
+        if ($add) {
+            echo "not inserted";
+        } else {
+            get_redirect("sub.php");
         }
     }
 }
 
+// below is the deleting functionality of sub.php
+function delete_sub()
+{
+    if (isset($_GET['delete'])) {
+        $page = 'sub.php';
+        $itemID = $_GET['delete'];
+        $delete = " DELETE FROM `sub` WHERE `sub`.`id` = $itemID;";
+        $result = connection($delete);
+        if ($result) {
+           echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+            <strong>Successfully Edites the data</strong> 
+          </div>";
+        } else {
+            get_redirect("sub.php");
+        }
+    }
+}
 
+// below is the search bar functionality
+function search_sub()
+{
+    $search = $_GET['search'];
+    // $sql = "SELECT * FROM `cat` where match(cat_name,cat_desc)against('%$search%')";
+    $sql = "SELECT * FROM `sub` WHERE `sub-name` = '$search' ";
+    $data = query($sql);
+    return $data;
+}
+// below is the editing section for the sub functionality
 
-//this  section for the 
+function sub_edit($id)
+{
+    if (isset($_POST['edit_sub'])) {
+        if (isset($_POST['edit_sub'])) {
+            $sem_id = $_POST['sem-id'];
+         $sub_name = $_POST['sub-name'];
+        $sub_code = $_POST['sub-code'];
+            $sql = "UPDATE `sub` SET `sem-id` = '$sem_id', `sub-name` = '$sub_name', `sub-code` = '$sub_code' WHERE `sub`.`id` = $id";
+            $result = connection($sql);
+            if ($result) {
+                "success";
+            } else {
+                echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>
+                <strong>Successfully Edites the data</strong> 
+              </div>";
+            }
+        }
+    }
+}
+// get the id of the sub table
+function sub_get_by_id($id)
+{
+    $query = "SELECT * FROM sub where id='$id'";
+    $data = query($query);
+    return $data;
+}
+// login functionality for admin
