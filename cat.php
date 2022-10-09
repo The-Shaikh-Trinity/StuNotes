@@ -21,7 +21,7 @@ include "includes/function.php"
       <nav class="flex px-5 py-3 text-black border border-gray-200 rounded-lg b bg-white dark:border-gray-200  border-x-4 border-y-0" aria-label="Breadcrumb">
         <ol class="inline-flex items-center space-x-1 md:space-x-3">
           <li class="inline-flex items-center">
-            <a href="#" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-indigo-500 dark:text-gray-400 ">
+            <a href="/caat.php" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-indigo-500 dark:text-gray-400 ">
               <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
               </svg>
@@ -113,56 +113,42 @@ include "includes/function.php"
                                                                                                                                                                                                                                           }  ?></button>
 
 
-                        <div class="content" id="hahah">
-                          <section class="text-gray-600 body-font">
-                            <div class="container px-5 py-24 mx-auto">
-                              <div class="text-center mb-20">
-                                <h1 class="sm:text-3xl text-2xl font-bold text-center title-font text-gray-900 mb-4">Semester <?php
-                                                                                                                              echo $data[$i]['sem-num'];                                                                                                          ?></h1>
-                                <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Details about semester</p>
 
-                                <div class="sem">
-                                  <div class="flex-container">
-                                    <?php
-                                    $sub = get_sub($data[$i]['id']);
-                                    if ($sub) {
-                                      $nu = sizeof($sub);
-                                    }
-                                    for ($k = 0; $k < $nu; $k++) {
-                                    ?>
-                                      <button class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer" id="buttonsub"><?php if (isset($sub[$k]['sub-name'])) {
-                                                                                                                                                                                                                                        echo $sub[$k]['sub-name'];
-                                                                                                                                                                                                                                      } else {
-                                                                                                                                                                                                                                        echo 'Will be Uploaded sooon';
-                                                                                                                                                                                                                                      }  ?></button>
 
-                                <?php
-                                    }
-                                  }
-                                } else {
-                                }
+                    <?php
+                      }
+                    }
+                  } else {
+
+                    ?>
+
+                <?php
+                  }
+                }
 
 
 
 
-                                ?>
-                                  </div>
 
-                                </div>
-                              </div>
-                            </div>
-                          </section>
-                        </div>
+                ?>
                     </div>
-                    <!-- semester end -->
-                    <!-- footer -->
-                <?php
-              }
-            }
-                ?>
-                <?php
-                include "includes/footer.php"
-                ?>
+
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+  </div>
+  <!-- semester end -->
+  <!-- footer -->
+  <?php
+
+
+  ?>
+  <?php
+  include "includes/footer.php"
+  ?>
 </body>
 
 </html>
