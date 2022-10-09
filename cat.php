@@ -54,15 +54,11 @@ include "includes/function.php"
 
     <?php
     $data =  get_sem();
-    // echo '<pre>';
-    // print_r($data);
-    // echo '</pre>';
-
-
-
     $num = sizeof($data);
+
     // echo $num;
     $i = 0;
+
 
 
     for ($i = 0; $i < $num; $i++) {
@@ -76,6 +72,7 @@ include "includes/function.php"
 
 
     ?>
+
 
 
 
@@ -115,16 +112,42 @@ include "includes/function.php"
                                                                                                                                                                                                                                             echo 'Will be Uploaded sooon';
                                                                                                                                                                                                                                           }  ?></button>
 
+
+      <div class="content" id="hahah">
+        <section class="text-gray-600 body-font">
+          <div class="container px-5 py-24 mx-auto">
+            <div class="text-center mb-20">
+              <h1 class="sm:text-3xl text-2xl font-bold text-center title-font text-gray-900 mb-4">Semester <?php
+                                                                                                            echo $data[$i]['sem-num'];                                                                                                          ?></h1>
+              <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">Details about semester</p>
+
+              <div class="sem">
+                <div class="flex-container">
+                  <?php
+                  $sub = get_sub($data[$i]['id']);
+                  if ($sub) {
+                    $nu = sizeof($sub);
+                  }
+                  for ($k = 0; $k < $nu; $k++) {
+                  ?>
+                    <button class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer" id="buttonsub"><?php if (isset($sub[$k]['sub-name'])) {
+                                                                                                                                                                                                                      echo $sub[$k]['sub-name'];
+                                                                                                                                                                                                                    } else {
+                                                                                                                                                                                                                      echo 'Will be Uploaded sooon';
+                                                                                                                                                                                                                    }  ?></button>
+
                   <?php
                       }
                     }
                   }
+
                   else{
 
                     
 
 
                   }
+
 
 
 
