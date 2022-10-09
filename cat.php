@@ -65,9 +65,9 @@ include "includes/function.php"
             $subjects = get_sub($data[$i]['id']);
             // subjects is the array which contains details abpout subjects table
             if ($subjects) {
-                echo "<pre>";
-                print_r($subjects);
-                echo "</pre>";
+                // echo "<pre>";
+                // print_r($subjects);
+                // echo "</pre>";
 
 
         ?>
