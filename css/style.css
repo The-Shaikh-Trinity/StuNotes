@@ -144,4 +144,8 @@
 .flex-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
+.lolol{
+  flex-wrap:wrap;
 }
