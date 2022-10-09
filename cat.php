@@ -65,7 +65,9 @@ include "includes/function.php"
             $subjects = get_sub($data[$i]['id']);
             // subjects is the array which contains details abpout subjects table
             if ($subjects) {
-
+                echo "<pre>";
+                print_r($subjects);
+                echo "</pre>";
 
 
         ?>
@@ -87,11 +89,11 @@ include "includes/function.php"
 
 
                                     ?>
-                                        <button class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub"><?php if (isset($subjects[$j]['sub-name'])) {
-                                                                                                                                                                                                                                                                echo $subjects[$j]['sub-name'];
-                                                                                                                                                                                                                                                            } else {
-                                                                                                                                                                                                                                                                echo 'Will be Uploaded sooon';
-                                                                                                                                                                                                                                                            }  ?></button>
+                                        <button onclick=" window.location.href='final.php?sub_id=<?php echo $subjects[$j]['id'] ?>';" class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub"><?php if (isset($subjects[$j]['sub-name'])) {
+                                                                                                                                                                                                                                                                                                                                                    echo $subjects[$j]['sub-name'];
+                                                                                                                                                                                                                                                                                                                                                } else {
+                                                                                                                                                                                                                                                                                                                                                    echo 'Will be Uploaded sooon';
+                                                                                                                                                                                                                                                                                                                                                }  ?></button>
 
                                     <?php
                                     }
