@@ -68,51 +68,68 @@ include "includes/function.php"
 
 
     $num = sizeof($data);
-  }
-  echo "<pre>";
-  print_r($data);
-  echo "</pre>";
+
+
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
   ?>
 
-  <div class="modules">
+    <div class="modules">
 
 
-    <section class="text-gray-600 body-font">
-      <div class="container px-5 py-24 mx-auto">
-        <div class="text-center mb-20">
-          <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Modules</h1>
-          <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">List of published Documents Available:-</p>
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="text-center mb-20">
+            <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Modules</h1>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">List of published Documents Available:-</p>
 
-          <div class="subjects">
+            <div class="subjects">
 
-            <button onclick=" window.location.href='#';" class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub"><?php if (isset($data[0]['sub_name'])) {
-                                                                                                                                                                                                                                                                      echo $data[0]['sub_name'];
-                                                                                                                                                                                                                                                                    } else {
-                                                                                                                                                                                                                                                                      echo 'Will be Uploaded sooon';
-                                                                                                                                                                                                                                                                    }  ?></button>
+              <?php
+              for ($i = 0; $i < $num; $i++) {
 
 
-          </div>
+              ?>
+
+                <button onclick=" window.location.href='#';" class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub"><?php if (isset($data[$i]['sub_name'])) {
+                                                                                                                                                                                                                                                                          echo $data[$i]['sub_name'];
+                                                                                                                                                                                                                                                                        } else {
+                                                                                                                                                                                                                                                                          echo 'Will be Uploaded sooon';
+                                                                                                                                                                                                                                                                        }  ?></button>
 
 
+              <?php
+              }
+            } else {
+              ?>
+              <img src="/images/Screenshot 2022-10-08 182658.png" alt="">
+            <?php
+            }
+            ?>
+
+
+            </div>
+
+
+      </section>
+
+    </div>
+
+
+
+
+
+
+    </div>
+
+    </div>
     </section>
+    </div>
 
-  </div>
-
-
-
-
-
-
-  </div>
-
-  </div>
-  </section>
-  </div>
-
-  <?php
-  include "includes/footer.php"
-  ?>
+    <?php
+    include "includes/footer.php"
+    ?>
 </body>
 
 </html>
