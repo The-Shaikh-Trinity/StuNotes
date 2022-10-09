@@ -38,8 +38,9 @@ function get_sub($id)
     $res = query($query);
     return $res;
 }
-function get_doc($id)
+function get_doc()
 {
+    $id = $_GET['sub_id'];
     $query = "SELECT * FROM doc WHERE sub_id = $id";
     $res = query($query);
     return $res;
