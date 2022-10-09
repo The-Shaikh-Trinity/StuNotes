@@ -66,6 +66,33 @@ include "includes/function.php"
   <div class="modules">
 
 
+    <section class="text-gray-600 body-font">
+      <div class="container px-5 py-24 mx-auto">
+        <div class="text-center mb-20">
+          <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Modules</h1>
+          <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">List of Modules Available:-</p>
+
+          <div class="subjects">
+
+            <button onclick=" window.location.href='#';" class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub">HI</button>
+
+
+          </div>
+
+
+    </section>
+
+  </div>
+
+
+
+
+
+
+  </div>
+
+  </div>
+  </section>
   </div>
 
   <?php
