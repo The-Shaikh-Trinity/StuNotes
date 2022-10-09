@@ -62,6 +62,17 @@ include "includes/function.php"
     </nav>
 
   </div>
+  <?php
+  $data =  get_doc();
+  if ($data) {
+
+
+    $num = sizeof($data);
+  }
+  echo "<pre>";
+  print_r($data);
+  echo "</pre>";
+  ?>
 
   <div class="modules">
 
