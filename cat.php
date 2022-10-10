@@ -63,7 +63,7 @@ include "includes/function.php"
         for ($i = 0; $i < $num; $i++) {
             // s
             $subjects = get_sub($data[$i]['id']);
-            // subjects is the array which contains details abpout subjects table
+            // subjects is the array which contains details about subjects table
             if ($subjects) {
                 // echo "<pre>";
                 // print_r($subjects);
@@ -93,7 +93,7 @@ include "includes/function.php"
                                                                                                                                                                                                                                                                                                                                                     echo $subjects[$j]['sub-name'];
                                                                                                                                                                                                                                                                                                                                                 } else {
                                                                                                                                                                                                                                                                                                                                                     echo 'Will be Uploaded sooon';
-                                                                                                                                                                                                                                                                                                                                                }  ?></button> 
+                                                                                                                                                                                                                                                                                                                                                }  ?></button>
 
                                     <?php
                                     }
