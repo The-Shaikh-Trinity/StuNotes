@@ -50,71 +50,27 @@ include "includes/function.php"
                         <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-indigo-500 md:ml-2 dark:text-gray-400 ">Semester</a>
                     </div>
                 </li>
+                <li>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <a href="#" class="ml-1 text-sm font-medium text-gray-700 hover:text-indigo-500 md:ml-2 dark:text-gray-400 ">Subject</a>
+                    </div>
+                </li>
                 <li aria-current="page">
                     <div class="flex items-center">
                         <svg class="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
                         </svg>
-                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Subject</span>
+                        <span class="ml-1 text-sm font-medium text-gray-500 md:ml-2 dark:text-gray-400">Document</span>
                     </div>
                 </li>
             </ol>
         </nav>
 
     </div>
-    <?php
-    $data =  get_doc();
-    if ($data) {
-
-
-        $num = sizeof($data);
-
-
-        // echo "<pre>";
-        // print_r($data);
-        // echo "</pre>";
-    ?>
-
-        <div class="modules">
-
-
-            <section class="text-gray-600 body-font">
-                <div class="container px-5 py-24 mx-auto">
-                    <div class="text-center mb-20">
-                        <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">Modules</h1>
-                        <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">List of published Documents Available:-</p>
-
-                        <div class="subjects">
-
-                            <?php
-                            for ($i = 0; $i < $num; $i++) {
-
-
-                            ?>
-
-                                <button onclick=" window.location.href='#';" class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub"><?php if (isset($data[$i]['sub_name'])) {
-                                                                                                                                                                                                                                                                                            echo $data[$i]['sub_name'];
-                                                                                                                                                                                                                                                                                        } else {
-                                                                                                                                                                                                                                                                                            echo 'Will be Uploaded sooon';
-                                                                                                                                                                                                                                                                                        }  ?></button>
-
-
-                            <?php
-                            }
-                        } else {
-                            ?>
-                            <img src="/images/Screenshot 2022-10-08 182658.png" alt="">
-                        <?php
-                        }
-                        ?>
-
-
-                        </div>
-
-
-            </section>
-
-        </div>
+   
 
 
 
