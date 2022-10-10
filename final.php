@@ -85,18 +85,17 @@ include "includes/function.php"
             <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">List of published Documents Available:-</p>
 
             <div class="subjects">
-
               <?php
               for ($i = 0; $i < $num; $i++) {
 
 
               ?>
 
-                <button onclick=" window.location.href='#';" class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub"><?php if (isset($data[$i]['sub_name'])) {
-                                                                                                                                                                                                                                                                          echo $data[$i]['sub_name'];
-                                                                                                                                                                                                                                                                        } else {
-                                                                                                                                                                                                                                                                          echo 'Will be Uploaded sooon';
-                                                                                                                                                                                                                                                                        }  ?></button>
+                <button onclick=" window.location.href='view.php?sub_desc=<?php echo $data[$i]['sub_desc'] ?>';" class="mx-auto mx-10 mt-16 px-5  bg-sky-100 border-2 rounded p-4 h-full items-center hover:bg-white hover:text-black hover:border-2 hover:border-sky-300 cursor-pointer flex-wrap-reverse" id="buttonsub"><?php if (isset($data[$i]['sub_name'])) {
+                                                                                                                                                                                                                                                                                                                              echo $data[$i]['sub_name'];
+                                                                                                                                                                                                                                                                                                                            } else {
+                                                                                                                                                                                                                                                                                                                              echo 'Will be Uploaded sooon';
+                                                                                                                                                                                                                                                                                                                            }  ?></button>
 
 
               <?php
