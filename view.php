@@ -78,7 +78,7 @@ include "includes/function.php"
         $li = $_GET['sub_desc'];
         ?>
 
-        <?php echo $li ?>
+        <iframe src="<?php echo $li ?>" width="640" height="480" allow="autoplay"></iframe>
     </div>
 
 
