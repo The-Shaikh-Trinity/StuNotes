@@ -70,9 +70,9 @@ include "includes/function.php"
     $num = sizeof($data);
 
 
-    // echo "<pre>";
-    // print_r($data);
-    // echo "</pre>";
+    echo "<pre>";
+    print_r($data);
+    echo "</pre>";
   ?>
 
     <div class="modules">
