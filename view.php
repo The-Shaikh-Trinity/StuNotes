@@ -70,22 +70,22 @@ include "includes/function.php"
         </nav>
 
     </div>
-   
 
 
 
 
 
 
-        </div>
 
-        </div>
-        </section>
-        </div>
+    </div>
 
-        <?php
-        include "includes/footer.php"
-        ?>
+    </div>
+    </section>
+    </div>
+
+    <?php
+    include "includes/footer.php"
+    ?>
 </body>
 
 </html>
